@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -6,6 +7,7 @@ class ActionButtonOnboarding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () => Beamer.of(context).beamToNamed('/settings'),
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 54,

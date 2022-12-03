@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:onboarding_app/presentation/action_button_onboarding.dart';
-import 'package:onboarding_app/presentation/dots_component.dart';
-import 'package:onboarding_app/presentation/onboarding_first_page.dart';
-import 'package:onboarding_app/presentation/onboarding_pages_template.dart';
+import 'package:onboarding_app/presentation/onboarding/action_button_onboarding.dart';
+import 'package:onboarding_app/presentation/settings/core/dots_component.dart';
+import 'package:onboarding_app/presentation/onboarding/onboarding_first_page.dart';
+import 'package:onboarding_app/presentation/onboarding/onboarding_pages_template.dart';
 
-class MyApp extends StatefulWidget {
+class Onboarding extends StatefulWidget {
   @override
-  const MyApp({super.key});
+  const Onboarding({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<Onboarding> createState() => _OnboardingState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _OnboardingState extends State<Onboarding> {
   int _currentPageIndex = 0;
 
   final _pageController = PageController(
@@ -166,6 +166,7 @@ class _MyAppState extends State<MyApp> {
                       children: [
                         DotsComponent(
                           receivedIndex: _currentPageIndex,
+                          numberOfDots: 4,
                         ),
                         const SizedBox(height: 48),
                         const ActionButtonOnboarding(),
@@ -193,22 +194,3 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-
-
-
-          // child: Container(
-          //   width: MediaQuery.of(context).size.width,
-          //   height: MediaQuery.of(context).size.height,
-          //   padding: const EdgeInsets.only(
-          //     bottom: 24,
-          //   ),
-          //   decoration: BoxDecoration(
-          //     image: DecorationImage(
-          //       image: _currentPageIndex == 1
-          //           ? const AssetImage(
-          //               'assets/images/onBoarding1WithGradient.png')
-          //           : const AssetImage('assets/images/secondpage.png'),
-          //     ),
-          //   ),
-          // ),
-         

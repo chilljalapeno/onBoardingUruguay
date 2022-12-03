@@ -1,11 +1,10 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding_app/presentation/my_app.dart';
+import 'package:onboarding_app/app_widget.dart';
+import 'package:onboarding_app/injection.dart';
 
 void main() {
-  runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyApp(),
-    ),
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+  configureDependencies();
+  runApp(AppWidget());
 }
